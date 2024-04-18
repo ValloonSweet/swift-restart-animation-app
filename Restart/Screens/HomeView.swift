@@ -65,7 +65,9 @@ struct HomeView: View {
             .controlSize(.large)
         } //: VSTACK
         .onAppear(perform: {
-            isAnimating = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                isAnimating = true
+            })
         })
     }
 }
